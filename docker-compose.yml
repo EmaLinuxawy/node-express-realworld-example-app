@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  nodejs:
+    build: .
+    command: npm run dev
+    container_name: swvl-nodejs
+    restart: always
+    ports:
+      - 8080:3000
+    depends_on:
+      - mongodb
+    env_file:
+      - .env
+
+  mongodb:
+    image: mongo
+    container_name: swvl-mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
+    env_file:
+      - .env
