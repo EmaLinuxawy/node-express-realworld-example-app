@@ -33,8 +33,8 @@ if (!isProduction) {
 if(isProduction){
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://MONGODB_URI/conduit');
-  mongoose.set('debug', true);
+  mongoose.connect('mongodb://swvl-mongodb/conduit');
+    mongoose.set('debug', true);
 }
 
 require('./models/User');
