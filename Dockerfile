@@ -9,5 +9,3 @@ COPY . /app
 RUN npm install
 RUN npm install -g newman
 
-#Expose port and start application
-EXPOSE 8080

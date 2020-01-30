@@ -3,11 +3,11 @@ version: '3'
 services:
   nodejs:
     build: .
-    command: npm run dev
+    command: node app.js
     container_name: swvl-nodejs
     restart: always
     ports:
-      - 8080:3000
+      - 3000:3000
     depends_on:
       - mongodb
     env_file:
