@@ -3,7 +3,7 @@ FROM node:13.7
 WORKDIR /app
 
 # Copy app source code
-COPY ./app .
+COPY . /app
 
 # Install app dependencies
 RUN npm install
