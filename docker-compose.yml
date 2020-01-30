@@ -3,11 +3,11 @@ version: '3'
 services:
   nodejs:
     build: .
-    command: ./wait-for.sh swvl-mongodb:27017 -- /app/node_modules/.bin/nodemon app.js
+    command: node app.js
     container_name: swvl-nodejs
     restart: always
     ports:
-      - 3000:3000
+      - 8080:3000
     depends_on:
       - mongodb
     env_file:
