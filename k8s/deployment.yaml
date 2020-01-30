@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swvl-nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swvl-nodejs
+  template:
+    metadata:
+      labels:
+        app: swvl-nodejs
+    spec:
+      containers:
+        - name: app
+          image: swvl-nodejs
+          ports:
+            - containerPort: 3000
+          env:
+            - name: MONGO_URL
+              value: mongodb://mongodb-swvl:27017/
